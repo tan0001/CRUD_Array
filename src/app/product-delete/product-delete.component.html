@@ -1,0 +1,19 @@
+<label>Enter ID : </label>
+<input placeholder="id" [(ngModel)]="product_id" required>
+<button (click)="retrieveProduct()">Get Products</button>
+
+<div class="display">
+    <ul class="display">
+        <span class="id">ID</span>
+        <span class="name">Name</span>
+        <span class="price">Price</span>
+        <hr width=0px>
+        <li *ngFor="let product of product_list">
+            <span class="id">{{product.id}}</span>
+            <span class="name">{{product.name}}</span>
+            <span class="price">{{product.price}}</span>
+        </li>
+        <label *ngIf="product_list.length === 0">No Match Found</label>
+    </ul>
+</div>
+<button (click)="deleteProduct()" *ngIf="product_list.length != 0">Delete All Matching Products</button>
