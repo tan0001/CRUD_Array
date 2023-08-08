@@ -25,31 +25,9 @@
                     <td class="id">{{product.id}}</td>
                     <td class="name">{{product.name}}</td>
                     <td class="price">{{product.price}}</td>
-                    <!--<td><button class="button" (click)="onDelete(product)"> Delete </button></td>-->
-                    <td class="button1"><a routerLink="/delete/{{product.id}}"> Delete </a></td>
-                    <td class="button1"><a routerLink="/update/{{product.id}}"> Update </a></td>
+                    <td><button class="button" (click)="onDelete(product)"> Delete </button></td>
+                    <td class="button1"><a routerLink="/detail/{{product.id}}"> Update </a></td>
 
             </tr>
     </table>
 </div>
-<!--
-<ng-template #content let-c="close" let-d="dismiss" *ngIf="selectedProduct">
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Delete COnfirmation</h4>
-        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-            <span aria-hidden="true">X</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <p>Do you want to delete product {{selectedProduct.id}} : {{selectedProduct.name}} {{selectedProduct.price}}?</p>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="d('Cross click')">
-            No
-        </button>
-        <button type="button" class="btn btn-outline-dark" (click)="c('yes')">
-            Yes
-        </button>
-    </div>
-</ng-template>
--->

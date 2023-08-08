@@ -1,5 +1,4 @@
-import { Component,EventEmitter,Output } from '@angular/core';
-/*import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';*/
+import { Component } from '@angular/core';
 
 import { PRODUCTS } from '../product_list';
 import { IProduct } from '../IProduct';
@@ -28,7 +27,6 @@ export class ProductComponent {
   }
 
   onDelete(p: IProduct) {
-    this.selectedProduct = p;
     if(confirm("Delete Product "+p.id+" : "+p.name+" "+p.price+"Rs ?")) {
       for (let j = 0; j < PRODUCTS.length; j++) {
         if (PRODUCTS[j].id == p.id) {

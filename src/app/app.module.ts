@@ -13,7 +13,6 @@ import { ProductRetrieveComponent } from './product-retrieve/product-retrieve.co
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 import { ToastrModule } from 'ngx-toastr';
-/*import { BsModalService, BsModalRef } from '@ngx-bootstrap/modal';*/
 
 @NgModule({
   declarations: [
