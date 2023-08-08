@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { IProduct } from '../IProduct';
 import { PRODUCTS } from '../product_list';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-delete',
@@ -9,24 +10,19 @@ import { PRODUCTS } from '../product_list';
   styleUrls: ['./product-delete.component.css']
 })
 export class ProductDeleteComponent {
-  product_list: IProduct[] = [];
-  product_id: number = 0;
+  @Input() product?: IProduct;
 
-  retrieveProduct() {
-    this.product_list = [];
-    for(let i=0; i<PRODUCTS.length; i++) {
-      if(PRODUCTS[i].id == this.product_id) this.product_list.push(PRODUCTS[i]);
-    }
-  }
+  constructor(
+    private location: Location
+  ) { }
 
   deleteProduct() {
-    for(let i=0; i<this.product_list.length; i++){
-      for(let j=0; j<PRODUCTS.length; j++) {
-        if(PRODUCTS[j].id == this.product_list[i].id) {
-          PRODUCTS.splice(j,1);
-          this.product_list.splice(i,1);
+    if (this.product)
+      for (let j = 0; j < PRODUCTS.length; j++) {
+        if (PRODUCTS[j].id == this.product.id) {
+          PRODUCTS.splice(j, 1);
         }
       }
-    }
+    this.location.back();
   }
 }

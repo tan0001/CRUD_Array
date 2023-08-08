@@ -1,135 +1,122 @@
 /*DASHBOARD*/
 .dashboard {
-    background-color: brown;
+  background-color: brown;
 }
 
 .dashboard button {
-    background-color: aqua;
-    padding: 15px 32px;
-    text-align: center;
-    border-color: white;
-    margin: 30px;
+  background-color: aqua;
+  padding: 15px 32px;
+  text-align: center;
+  border-color: aqua;
+  margin: 30px;
+}
+
+.button {
+  background-color: aqua;
+  padding: 15px 32px;
+  text-align: center;
+  border-color: white;
+  margin: 30px;
+  text-decoration: none;
+  color: black;
 }
 
 .dashboard hr {
-    border: 5px solid green;
+  border: 5px solid green;
 }
 
-/*PRODUCT LIST
+/*PRODUCT LIST*/
+.display {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
 .display li {
-    display: flex;
+  display: flex;
 }
 
 .display button {
-    flex: 1;
-    cursor: pointer;
-    position: relative;
-    left: 0;
-    background-color: #EEE;
-    margin: .5em;
-    padding: 0;
-    border-radius: 4px;
-    display: flex;
-    align-items: stretch;
-    height: 1.8em;
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: stretch;
+  height: 1.8em;
+}
+
+.display .button:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  left: .1em;
+}
+
+.display button:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.display button.selected {
+  background-color: black;
+  color: white;
+}
+
+.display button.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+.display button.selected:active {
+  background-color: black;
+  color: white;
 }
 
 .display .id {
-    display: inline-block;
-    align-self: center;
-    color: white;
-    padding: 10px;
-    background-color: #405061;
-    border-radius: 4px;
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height: 1em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
 }
 
 .display .name {
-    display: inline-block;
-    align-self: center;
-    color: white;
-    padding: 10px;
-    background-color: #409061;
-    border-radius: 4px;
+  align-self: center;
+  background-color: #409061;
 }
 
 .display .price {
-    display: inline-block;
-    align-self: center;
-    color: white;
-    padding: 10px;
-    background-color: #401061;
-    border-radius: 4px;
+  align-self: center;
+  color: #401061;
 }
 
-/* HeroesComponent's private CSS styles */
-.display {
-    margin: 0 0 2em 0;
-    list-style-type: none;
-    padding: 0;
-    width: 15em;
-  }
-  
-  .display li {
-    display: flex;
-  }
-  
-  .display button {
-    flex: 1;
-    cursor: pointer;
-    position: relative;
-    left: 0;
-    background-color: #EEE;
-    margin: .5em;
-    padding: 0;
-    border-radius: 4px;
-    display: flex;
-    align-items: stretch;
-    height: 1.8em;
-  }
-  
-  .display button:hover {
-    color: #2c3a41;
-    background-color: #e6e6e6;
-    left: .1em;
-  }
-  
-  .display button:active {
-    background-color: #525252;
-    color: #fafafa;
-  }
-  
-  .display button.selected {
-    background-color: black;
-    color: white;
-  }
-  
-  .display button.selected:hover {
-    background-color: #505050;
-    color: white;
-  }
-  
-  .display button.selected:active {
-    background-color: black;
-    color: white;
-  }
-  
-  .display .id {
-    display: inline-block;
-    font-size: small;
-    color: white;
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color: #405061;
-    line-height: 1em;
-    margin-right: .8em;
-    border-radius: 4px 0 0 4px;
-  }
-  
-  .display .name {
-    align-self: center;
-    background-color: #409061;
-  }
+a {
+  text-decoration: none;
+  color: black;
+}
 
-  .display .price {
-    align-self: center;
-    color: #401061;
-  }
+.button1 {
+  background-color: aqua;
+  border-color: white;
+  text-decoration:none;
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+input {
+  border: none;
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  padding: none;
+  width: auto;
+}

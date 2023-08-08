@@ -1,12 +1,16 @@
 <div class="dashboard">
-    <button class="dashboard" (click)="onAddNew()">Add New Product</button>
-    <button class="dashboard" (click)="onUpdate()">Update Existing Product</button>
-    <button class="dashboard" (click)="onDelete()">Delete Existing Product</button>
+
     <button class="dashboard" (click)="onSelectID()">Retrieve Product by ID</button>
+    <a class="dashboard" routerLink="/add" class="button">Add New Product</a>
     <hr class="dashboard">
 </div>
 
-<div class="display"> <!--
+<div class="retrieve-product" *ngIf="displaySelect">
+    <h2>Retrieve Product by ID</h2>
+    <app-product-retrieve></app-product-retrieve>
+</div>
+
+<div class="display">
     <table class="display">
         <thead>
             <tr>
@@ -16,44 +20,14 @@
             </tr>
 
         </thead>
-        <tbody>
             <tr *ngFor="let product of products">
-                
+
                     <td class="id">{{product.id}}</td>
                     <td class="name">{{product.name}}</td>
                     <td class="price">{{product.price}}</td>
-                
+                    <td><button class="button" (click)="onDelete(product)"> Delete </button></td>
+                    <td class="button1"><a routerLink="/detail/{{product.id}}"> Update </a></td>
+
             </tr>
-        </tbody>
-    </table>-->
-    <h2>My Heroes</h2>
-    <ul class="display">
-        <li *ngFor="let product of products">
-            <button type="button">
-                <span class="id">{{product.id}} | </span>
-                <span class="name">{{product.name}} | </span>
-                <span class="price">{{product.price}}</span>
-            </button>
-        </li>
-    </ul>
-</div>
-
-<div class="add-product" *ngIf="displayAdd">
-    <h2>Add New Product</h2>
-    <app-product-add></app-product-add>
-</div>
-
-<div class="update-product" *ngIf="displayUpdate">
-    <h2>Update Existing Product</h2>
-    <app-product-update></app-product-update>
-</div>
-
-<div class="delete-product" *ngIf="displayDelete">
-    <h2>Delete Existing Product</h2>
-    <app-product-delete></app-product-delete>
-</div>
-
-<div class="retrieve-product" *ngIf="displaySelect">
-    <h2>Retrieve Product by ID</h2>
-    <app-product-retrieve></app-product-retrieve>
+    </table>
 </div>

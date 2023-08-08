@@ -3,37 +3,48 @@ import { Component } from '@angular/core';
 import { PRODUCTS } from '../product_list';
 import { IProduct } from '../IProduct';
 
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+
   products = PRODUCTS;
 
-  displayAll = false;
+  displaySelect = false;
   displayAdd = false;
   displayUpdate = false;
-  displayDelete = false;
-  displaySelect = false;
+  selectedProduct?: IProduct;
 
-  onViewAll() {
-    this.displayAll = !this.displayAll;
+  onSelectID() {
+    this.displaySelect = !this.displaySelect;
   }
 
   onAddNew() {
     this.displayAdd = !this.displayAdd;
   }
 
-  onUpdate() {
-    this.displayUpdate = !this.displayUpdate;
+  onDelete(p: IProduct) {
+    if(confirm("Delete Product "+p.id+" : "+p.name+" "+p.price+"Rs ?")) {
+      for (let j = 0; j < PRODUCTS.length; j++) {
+        if (PRODUCTS[j].id == p.id) {
+          PRODUCTS.splice(j, 1);
+        }
+      }
+    }
+  }
+/*
+  genMsg() : string{
+    if(this.selectedProduct)
+    this.msg = 'Product '+this.selectedProduct.id+" : "+this.selectedProduct.name+" "+this.selectedProduct.price+' Rs Updated!';
+    return this.msg;
   }
 
-  onDelete() {
-    this.displayDelete = !this.displayDelete;
-  }
-
-  onSelectID() {
-    this.displaySelect = !this.displaySelect;
-  }
+  showSuccess() {
+    if (this.selectedProduct) {
+      this.toastr.success(this.genMsg());
+    }
+  }*/
 }
