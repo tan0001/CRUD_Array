@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IProduct } from '../IProduct';
 import { PRODUCTS } from '../product_list';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-add',
@@ -10,6 +11,10 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
   styleUrls: ['./product-add.component.css']
 })
 export class ProductAddComponent {
+  constructor(
+    private location: Location
+  ) {}
+
   msg: string = '';
 
   prod : IProduct = {
@@ -31,5 +36,9 @@ export class ProductAddComponent {
     this.prod.price = <number>(this.addProductForm.controls.product_price.value);
     PRODUCTS.push(this.prod);
     this.msg = "Product added successfully!"
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

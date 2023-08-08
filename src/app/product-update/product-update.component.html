@@ -1,19 +1,14 @@
-<label>Enter ID : </label>
-<input placeholder="id" [(ngModel)]="product_id" required>
-<button (click)="retrieveProduct()">Get Products</button>
-
-<div class="display">
+<div class="display" *ngIf="product">
     <ul class="display">
         <span class="id">ID</span>
         <span class="name">Name</span>
         <span class="price">Price</span>
         <hr width=0px>
-        <li *ngFor="let product of product_list">
-            <span class="id">{{product.id}}</span>
-            <input placeholder="id" [(ngModel)]="product.name" required>
-            <input placeholder="id" [(ngModel)]="product.price" required>
-        </li>
-        <label *ngIf="product_list.length === 0">No Match Found</label>
-        <button (click)="updateProduct()" *ngIf="product_list.length != 0">Update Products</button>
+
+        <span class="id">{{product.id}}</span>
+        <input placeholder="name" [(ngModel)]="product.name" required>
+        <input placeholder="price" [(ngModel)]="product.price" required type="number">
+
+        <button (click)="updateProduct()">Update Product</button>
     </ul>
 </div>
